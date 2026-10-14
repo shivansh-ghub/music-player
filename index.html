@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>My Music Player</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <!-- Left side: spinning record -->
+    <section class="now-playing">
+      <div class="vinyl" id="vinyl">
+        <div class="vinyl-label"></div>
+      </div>
+      <h1 id="title">Pick a song</h1>
+      <p id="artist">Your playlist is below</p>
+    </section>
+
+    <!-- Right side: controls and playlist -->
+    <section class="panel">
+
+      <!-- Seek bar -->
+      <div class="progress">
+        <span id="current-time">0:00</span>
+        <input type="range" id="seek" min="0" max="100" value="0" aria-label="Seek" />
+        <span id="duration">0:00</span>
+      </div>
+
+      <!-- Buttons -->
+      <div class="controls">
+        <button id="shuffle" title="Shuffle" aria-label="Shuffle">Shuffle</button>
+        <button id="prev" title="Previous" aria-label="Previous song">&#9198;</button>
+        <button id="play" class="play-btn" title="Play" aria-label="Play">&#9654;</button>
+        <button id="next" title="Next" aria-label="Next song">&#9197;</button>
+        <button id="repeat" title="Repeat" aria-label="Repeat">Repeat</button>
+      </div>
+
+      <!-- Volume -->
+      <div class="volume">
+        <label for="volume">Volume</label>
+        <input type="range" id="volume" min="0" max="100" value="80" />
+      </div>
+
+      <!-- Song list (filled in by script.js) -->
+      <ul class="playlist" id="playlist"></ul>
+
+      <p class="message" id="message"></p>
+    </section>
+
+  </main>
+
+  <!-- The hidden audio element that actually plays sound -->
+  <audio id="audio"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
